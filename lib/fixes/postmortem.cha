@@ -1,0 +1,12 @@
+@Font:	CAfont:12:0
+@UTF8
+@Begin
+@Languages:	eng
+@Participants:	CHI Target_Child
+@ID:	eng|sample|CHI|||||Target_Child|||
+*CHI:	the red is on the green with a blue boy .
+%mor:	det|the adj|red v|be&3S prep|on det|the adj|green prep|with
+	det|a adj|blue n|boy  .
+*CHI:	the man will milk the brown cow .
+%mor:	det|the n|man v:aux|will v|milk det|the adj|brown n|cow .
+@End

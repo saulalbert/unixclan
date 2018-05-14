@@ -1,0 +1,14 @@
+@UTF8
+!$b co|so => !$b conj:sub|so
+$b conj:sub|so => $b co|so
+n|look-PL prep|like  => v|look-3S prep|like
+det adj v*  => det n v*
+det adj $e  => det n $e
+n|look-PL prep|like  => v|look-3S prep|like
+v|arm => n|arm
+v|arm-3S => n|arm-PL
+v|ball => n|ball
+v|ball-3S => n|ball-PL
+v|bank => n|bank
+v|bank-3S => n|bank-PL
+

@@ -1,0 +1,86 @@
+lXs Special Text file saves all fonts LxS
+@UTF8
+% Each search string starts with '+' for including or '-' for excluding
+% Each label for the columns in the output is surrounded by either " or '
+% Lines preceded by % are comments
+% Rules preceded by # are not displayed in the output
+
+% These markers specify the nature of the following string
+% # prefix marker
+% | part-of-speech marker
+% ; stem of the word marker
+% - suffix marker
+% & nonconcatenated morpheme marker
+% = English translation for the stem marker
+% @ replacement word preceding [: ...] code marker
+% * error code inside [* ...] code marker
+% followed, optionally, by - or + and immediately followed by either one:
+%     *        find any match
+%     %        erase any match
+%     string   find "string"
+% o erase all other elements not specified by user
+%     o%    erase all other elements
+%     o~    erase postclitic element, if present
+%     o$    erase preclitic element, if present
+% ,		separates alternative elements
+% Postclitic AND Preclitic exception:
+%   Find postclitics with specific Morphosyntactic marker example:
+%       |*,~|*   OR   ;*,~;*
+%   Find preclitic with specific Morphosyntactic marker example:
+%       |*,$|*   OR   ;*,$;*
+%     *        find any match
+%     string   find "string"
+
+% if you want to get the actual count of the items found instead of percentage,
+% then do not put the % character at the beginning of the column label
+% for example: +|*:wh	"*:wh" instean of "% *:wh"
+% rules can be specified in long form "+|aux +|aux:*" or short form "+|aux,|aux:*"
+
+% the following rules are exclusive, as indicated by word "OR"
+% the rules are applied one by one from top to button
+% when a rule matches, then the remaining rules in the list are ignored
+% rules are considered non-exclusive, if the OR is missing
+
+OR
++|*:int			"% *:int"
++|adj,|adj:*		"% adj,adj:*"
++|adv,|adv:*		"% adv,adv:*"
++|aux,|aux:*		"% aux,aux:*"
++|conj,|conj:*		"% conj,conj:*"
++|coord,|coord:*	"% coord,coord:*"
++|det:dem -|det:num*	"% det:dem"
++|det:art			"% det:art"
++|inf			"% inf"
++|mod,r-will,r-shall,r-can,r-may,r-must,r-should,r-could	"% modal" 
++|n,|n:*		"% n,n:*"
++|neg			"% neg"
++|part,-PASTP +|part,&PASTP	"% part|-PASTP,part|&PASTP"
++|part,-PRESP +|part,&PRESP	"% part|-PRESP,part|&PRESP"
++|prep,|prep:*			"% prep,prep:*"
++|pro:per -|pro:poss,|det:poss -|pro:refl,|pro:refl:*	"% pro:per"
++|pro:poss,|pro:poss:*		"% pro:poss,pro:poss:*"
++|pro:refl,|pro:refl:*		"% pro:refl,pro:refl:*"
++|qn,|det:num*		"% qn,det:num"
++|v			"% v"
++|cop			"% cop"
+
+
+% the following rules are non-exclusive, as indicated by word "AND"
+% each one of following rules is applied independently of the other rules
+
+AND
+# +|v,|v:*		"% v,v:*"
++&13S			"% *&13S"
++&3S			"% *&3S"
++&PAST			"% *&PAST"
++-3S			"% *-3S"
++-PAST			"% *-PAST"
++|adj,-CP		"% adj|*-CP"
++|adj,-SP		"% adj|*-SP"
++|n,|n:*,&PL		"% n|*&PL,n:*|*&PL"
++|n,|n:*,-PL		"% n|*-PL,n:*|*-PL"
++|n,|n:*,~|poss		"% n|*~poss|*,n:|*~poss|*"
++|part,&PASTP		"% part|*&PASTP"
++|part,-PASTP		"% part|*-PASTP"
++|part,-PRESP		"% part|*-PRESP"
+

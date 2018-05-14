@@ -1,0 +1,71 @@
+@UTF8
+dss +ljpn
+ipsyn +l0
+% Lines preceded by % are comments
+
+% Each search string starts with '+' for including or '-' for excluding
+% Each label for the columns in the output is surrounded by either " or '
+% Rules can be specified in long form "+|n +|n:*" or short form "+|n,|n:*"
+% These markers specify the nature of the following string
+% # prefix marker
+% | part-of-speech marker
+% r stem of the word marker
+% - suffix marker
+% & nonconcatenated morpheme marker
+% = English translation for the stem marker
+% @ replacement word preceding [: ...] code marker
+% * error code inside [* ...] code marker
+% o all other elements not specified by user
+% followed by - or + and/or the following
+%	*		find any match
+%	%		erase any match
+%	string		find "string"
+% , the comma separates alternative elements 
+% Exception:
+%   ~ postclitic OR $ preclitic
+% followed by
+%     Morpho-elements 	find words with preclitic OR postclitic Morpho elements
+%     % 		if preclitic OR postclitic is present, then erase it
+
++|n	"n"
++|n:mot	"n:mot"
++|n:vn	"vn"
++|v:v,|v:c,|v:ir	"v"
++|adj,|adj:mot	"adj"
++|adv	"adv"
++|v:*:sub	"v:sub"
++|v:cop	"v:cop"
+
++|ptl:case	"p-case"
++|ptl:post	"p-post"
++|ptl:top	"p-top"
++|ptl:foc	"p-foc"
++|ptl:quot	"p-quot"
++|ptl:attr	"p-attrの"
++|ptl:snr	"p-snrの"
++|n*fml	"fml"
++|smod	"smod"
++|ptl:conj	"p-conj"
++|conj	"conj"
+
++-PRES	"V-PRESる"
++-PAST	"V-PASTた"
++-IMP:te	"V-IMP:te"
++-CONN	"V-CONNて"
++-HORT	"V-HORTよう"
++-COND:*	"V-CONDたら/れば"
++&GER	"V-GERい"
++&OBL:*	"V-OBLなくちゃ"
++-IMP:nasai	"V-IMPなさい"
+
++-COMPL	"COMPLちゃう"
++-NEG	"NEGない"
++-POT	"POTれる"
++-DESID	"DESIDたい"
++-POL	"POLます"
++-CAUS	"CAUSさせる"
++-PASS	"PASSられる"
+
+
+
+
