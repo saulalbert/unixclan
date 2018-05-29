@@ -126,8 +126,8 @@
 <li> CA transcribers use colons and underlines within words because it maintains rough word/time alignment.</li>
 <li> An underlined character followed by a colon to indicate falling-to-mid intonation - f<u>a</u>:lling</li>
 <li> A character followed by an underlined colon to indicate rising-to-mid intonation - ri<u>:</u>sing</li>
-<li> A down arrow (&darr;) before a pitch-falling syllable to indicate a falling to low intonation - f&darr;alling</li>
-<li> An up arrow (&uarr;) before a pitch-rising syllable to indicate a rising to high intonation - r&uarr;ising</li>
+<li> A down arrow (↓) before a pitch-falling syllable to indicate a falling to low intonation - f↓alling</li>
+<li> An up arrow (↑) before a pitch-rising syllable to indicate a rising to high intonation - r↑ising</li>
 </ul>
 </li>
 <li> Within turns:
@@ -141,10 +141,10 @@
 <li>CHAT2CAlite should convert:
 <ul>
 <li> within-word intonation shifts:</li>
-<li> mi↗d ------&gt; mi<u>:</u>d</li>
-<li> h⇗igh ------&gt; h&uarr;igh (CA transcribers use a simple arrow within a word to indicate rising to high)</li>
-<li> m↘id ------&gt; m<u>i</u>:d</li>
-<li> l⇘ow ------&gt; l&darr;ow (CA transcribers use a simple arrow within a word to indicate falling to low)</li>
+<li> mi↗d ------&gt; mi:̲d</li>
+<li> h⇗igh ------&gt; h↑igh (CA transcribers use a simple arrow within a word to indicate rising to high)</li>
+<li> m↘id ------&gt; mi̲:d</li>
+<li> l⇘ow ------&gt; l↓ow (CA transcribers use a simple arrow within a word to indicate falling to low)</li>
 <li> within-turn intonation shifts:</li>
 <li> falling. ----&gt; falling↘</li>
 <li> mid-rise, ----&gt; rise↗</li>
@@ -155,16 +155,16 @@
 <ul>
 <li> within-word intonation shifts:</li>
 <li> mi<u>:</u>d ------&gt; mi↗d</li>
-<li> h&uarr;igh ------&gt; h⇗igh</li>
+<li> h↑igh ------&gt; h⇗igh</li>
 <li> m<u>i</u>:d ------&gt; m↘id</li>
-<li> l&darr;ow ------&gt; l⇘ow</li>
+<li> l↓ow ------&gt; l⇘ow</li>
 <li> within-turn intonation shifts:</li>
 <li> falling. ----&gt; falling↘</li>
 <li> mid-rise, ----&gt; rise↗</li>
 <li> high-rise? ---&gt; rise⇗</li>
 </ul>
 </li>
-<li>NB: CHECK complains about ⇗, ↗, ↘, and ⇗ (but not &uarr; or &darr;) in turns that also include CHAT-style overlap markers. e.g. the following line gets this CHECK error: "* 22: Item [&gt;] must precede the utterance delimiter or CA delimiter":</li>
+<li>NB: CHECK complains about ⇗, ↗, ↘, and ⇗ (but not ↑ or ↓) in turns that also include CHAT-style overlap markers. e.g. the following line gets this CHECK error: "* 22: Item [&gt;] must precede the utterance delimiter or CA delimiter":</li>
 </ul>
 </li>
 </ul>
@@ -305,8 +305,8 @@
 <h2><a name="_Toc515210516"></a> Other issues (which do not require any changes to CA-lite or CHAT-CA)</h2>
 <p><strong>Pitch shift arrows as delimiters or marking whole words as pitch-shifted </strong></p>
 <ul>
-<li>CA transcribers mark whole words as markedly pitch-shifted using arrows before the &darr;word</li>
-<li>A series of words can be delimited as markedly pitch-shifted with &darr;one arrow on either side&darr;</li>
+<li>CA transcribers mark whole words as markedly pitch-shifted using arrows before the ↓word</li>
+<li>A series of words can be delimited as markedly pitch-shifted with ↓one arrow on either side↓</li>
 <li>CHAT does not recognize arrows as delimiters, but rather as single episodes of pitch-shift</li>
 <li><strong>Proposed solution: </strong> none really needed, since CHECK does not complain about using arrows as delimiters</li>
 </ul>
